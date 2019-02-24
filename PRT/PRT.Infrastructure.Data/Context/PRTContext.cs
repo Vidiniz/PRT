@@ -13,6 +13,7 @@ namespace PRT.Infrastructure.Data.Context
         }
 
         public DbSet<User> Users { get; set; }
+        public DbSet<Todo> Todos { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

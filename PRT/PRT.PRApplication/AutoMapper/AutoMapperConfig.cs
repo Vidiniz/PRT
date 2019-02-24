@@ -9,9 +9,7 @@ namespace PRT.PRApplication.AutoMapper
             Mapper.Initialize(x =>
             {
                 x.AddProfile<MappingProfile>();
-            });
-
-            Mapper.Configuration.AssertConfigurationIsValid();
+            });            
         }
     }
 }
