@@ -1,4 +1,4 @@
-﻿using PRT.Domain.Interfaces;
+﻿using PRT.Domain.Interfaces.Repositories;
 using PRT.Infrastructure.Data.Context;
 using System;
 using System.Collections.Generic;

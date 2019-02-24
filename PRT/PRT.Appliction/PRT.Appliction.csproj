@@ -41,7 +41,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppServiceBase.cs" />
+    <Compile Include="Interface\IAppServiceBase.cs" />
+    <Compile Include="Interface\IUserAppService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserAppService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PRT.Domain\PRT.Domain.csproj">
+      <Project>{0577AB4B-81A9-400D-88D0-18299BEB8203}</Project>
+      <Name>PRT.Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

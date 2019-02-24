@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace PRT.Domain.Interfaces
+namespace PRT.Domain.Interfaces.Repositories
 {
     public interface IRepositoryBase<TEntity> where TEntity: class
     {
