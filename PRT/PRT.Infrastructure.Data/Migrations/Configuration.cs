@@ -5,19 +5,19 @@ namespace PRT.Infrastructure.Data.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<PRT.Infrastructure.Data.Context.PRTContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<Context.PRTContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
         }
 
-        protected override void Seed(PRT.Infrastructure.Data.Context.PRTContext context)
+        protected override void Seed(Context.PRTContext context)
         {
-            //  This method will be called after migrating to the latest version.
+        //    //  This method will be called after migrating to the latest version.
 
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data.
+        //    //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
+        //    //  to avoid creating duplicate seed data.
         }
     }
 }

@@ -1,4 +1,7 @@
-﻿using PRT.Appliction.Interface;
+﻿using AutoMapper;
+using PRT.Appliction.Interface;
+using PRT.Domain.Entitites;
+using PRT.PRApplication.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,30 +21,70 @@ namespace PRT.PRApplication.Controllers
         }
 
         // GET: api/User
-        public IEnumerable<string> Get()
+        public IEnumerable<UserViewModel> Get()
         {
-            return new string[] { "value1", "value2" };
+            try
+            {
+                return Mapper.Map<IEnumerable<User>, IEnumerable<UserViewModel>>(_userApp.GetAll());
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
         }
 
         // GET: api/User/5
-        public string Get(int id)
+        public UserViewModel Get(int id)
         {
-            return "value";
+            try
+            {
+                return Mapper.Map<User, UserViewModel>(_userApp.GetById(id));
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            
         }
 
         // POST: api/User
-        public void Post([FromBody]string value)
+        public void Post([FromBody]UserViewModel value)
         {
+            try
+            {
+                _userApp.Save(Mapper.Map<UserViewModel, User>(value));
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         // PUT: api/User/5
-        public void Put(int id, [FromBody]string value)
+        public void Put(int id, [FromBody]UserViewModel value)
         {
+            try
+            {
+                value.Id = id;
+                _userApp.Update(Mapper.Map<UserViewModel, User>(value));
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         // DELETE: api/User/5
         public void Delete(int id)
         {
+            try
+            {
+                _userApp.Remove(_userApp.GetById(id));
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }

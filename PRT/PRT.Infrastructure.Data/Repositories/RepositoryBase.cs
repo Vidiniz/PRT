@@ -19,6 +19,7 @@ namespace PRT.Infrastructure.Data.Repositories
         public IEnumerable<TEntity> GetAll()
         {
             return DataBase.Set<TEntity>().ToList();
+            
         }
 
         public TEntity GetById(int id)
