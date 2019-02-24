@@ -1,12 +1,7 @@
 ﻿using PRT.Domain.Entitites;
 using PRT.Infrastructure.Data.EntityConfig;
-using System;
-using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PRT.Infrastructure.Data.Context
 {

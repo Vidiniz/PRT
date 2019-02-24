@@ -13,7 +13,5 @@ namespace PRT.Appliction
         {
             _userService = userService;
         }
-
-
     }
 }

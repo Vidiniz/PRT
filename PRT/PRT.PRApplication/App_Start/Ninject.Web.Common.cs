@@ -69,12 +69,15 @@ namespace PRT.PRApplication.App_Start
         {
             kernel.Bind(typeof(IAppServiceBase<>)).To(typeof(AppServiceBase<>));
             kernel.Bind<IUserAppService>().To<UserAppService>();
+            kernel.Bind<ITodoAppService>().To<TodoAppService>();
 
             kernel.Bind(typeof(IServiceBase<>)).To(typeof(ServiceBase<>));
             kernel.Bind<IUserService>().To<UserService>();
+            kernel.Bind<ITodoService>().To<TodoService>();
 
             kernel.Bind(typeof(IRepositoryBase<>)).To(typeof(IRepositoryBase<>));
             kernel.Bind<IUserRepository>().To<UserRepository>();
+            kernel.Bind<ITodoRepository>().To<TodoRepositor>();
         }        
     }
 }
