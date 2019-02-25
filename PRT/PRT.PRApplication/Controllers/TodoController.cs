@@ -5,9 +5,11 @@ using PRT.PRApplication.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace PRT.PRApplication.Controllers
 {
+    [EnableCors(origins: "http://localhost:8080", headers: "*", methods: "*")]
     public class TodoController : ApiController
     {
         private readonly ITodoAppService _todoApp;

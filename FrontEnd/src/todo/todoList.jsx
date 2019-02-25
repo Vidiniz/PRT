@@ -6,8 +6,8 @@ const TodoList = props => {
     const renderRows = () => {
         const list = props.list || []
         return list.map(todo => (
-            <tr key={todo._id}>
-                <td className={todo.done ? 'markedAsDone': ''}>{todo.description}</td>
+            <tr key={todo.Id}>
+                <td className={todo.Done ? 'markedAsDone': ''}>{todo.Description}</td>
                 <td>
                     <IconButton style="success" icon="check" hide={todo.done}
                         onClick={() => props.handleMarkDone(todo)}></IconButton>

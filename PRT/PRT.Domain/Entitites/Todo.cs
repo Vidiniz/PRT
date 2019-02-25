@@ -10,6 +10,8 @@ namespace PRT.Domain.Entitites
 
         public DateTime CreatedAt { get; set; }
 
+        public bool Done { get; set; }
+
         public Todo()
         {
             this.CreatedAt = DateTime.Now;

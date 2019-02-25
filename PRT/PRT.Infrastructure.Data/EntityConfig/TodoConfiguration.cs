@@ -12,7 +12,9 @@ namespace PRT.Infrastructure.Data.EntityConfig
             Property(t => t.Description)
                 .IsRequired()
                 .HasMaxLength(200);
-            
+
+            Property(t => t.Done)
+                .IsRequired();            
         }
     }
 }
