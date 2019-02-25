@@ -1,6 +1,7 @@
 ﻿using PRT.Domain.Entitites;
 using PRT.Domain.Interfaces.Repositories;
 using PRT.Domain.Interfaces.Services;
+using System.Collections.Generic;
 
 namespace PRT.Domain.Services
 {
@@ -12,6 +13,16 @@ namespace PRT.Domain.Services
             : base(todoRepository)
         {
             _todoRepository = todoRepository;
+        }
+
+        public IEnumerable<Todo> GetAllOrderByDescending(string field)
+        {
+            return _todoRepository.GetAllOrderByDescending(field);
+        }
+
+        public IEnumerable<Todo> GetByDescription (string description)
+        {
+            return _todoRepository.GetByDescription(description);
         }
     }   
 }

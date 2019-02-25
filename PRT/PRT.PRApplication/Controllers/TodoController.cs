@@ -43,6 +43,36 @@ namespace PRT.PRApplication.Controllers
             }
         }
 
+        public IEnumerable<TodoViewModel> Get(string description)
+        {
+            try
+            {
+                if (!string.IsNullOrEmpty(description))
+                {
+                    return Mapper.Map<IEnumerable<Todo>, IEnumerable<TodoViewModel>>(_todoApp.GetByDescription(description));
+                }
+                return Mapper.Map<IEnumerable<Todo>, IEnumerable<TodoViewModel>>(_todoApp.GetAll());
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        [HttpGet]
+        [Route("api/get")]
+        public IEnumerable<TodoViewModel> GetAllOrderBy(string field)
+        {
+            try
+            {
+                return Mapper.Map<IEnumerable<Todo>, IEnumerable<TodoViewModel>>(_todoApp.GetByDescription(field));
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public void Post([FromBody]TodoViewModel value)
         {
             try
